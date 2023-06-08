@@ -1,9 +1,13 @@
 <?php include('../includes/connect.php');
 session_start();
-$_SESSION['adminname'] = 'shweko2003##';;
+// $_SESSION['adminname'] = 'shweko2003##';;
 if (!isset($_SESSION['adminid']) && !isset($_SESSION['adminname'])) {
     header('Location:auth.php?login');
+    if ($_SESSION('adminname') !== 'shwekoko2003##') {
+        header('Location:auth.php?login');
+    }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
