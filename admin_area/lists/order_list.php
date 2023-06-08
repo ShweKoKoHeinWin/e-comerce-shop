@@ -1,7 +1,7 @@
 <?php include('../includes/connect.php');
 
-if (!isset($_SESSION['adminid']) && !isset($_SESSION['adminname'])) {
-    header('Location:auth.php?login');
+if (!isset($_SESSION['adminid']) || !isset($_SESSION['adminname'])) {
+    header('Location:../auth.php?login');
 } ?>
 
 <!DOCTYPE html>

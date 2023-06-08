@@ -34,6 +34,9 @@ if (!isset($_SESSION['adminid']) && !isset($_SESSION['adminname'])) {
                         <li class="nav-item">
                             <a href="index.php?profile" class="nav-link">Welcome <?= $_SESSION['adminname']; ?></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?admin=1">Logout</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -95,7 +98,10 @@ if (!isset($_SESSION['adminid']) && !isset($_SESSION['adminname'])) {
             if (isset($_GET['profile'])) {
                 include('./view/profile.php');
             }
-
+            if (isset($_GET['admin'])) {
+                session_destroy();
+                echo "<script>window.location.reload()</script>";
+            }
             ?>
         </div>
 

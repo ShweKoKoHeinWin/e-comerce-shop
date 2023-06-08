@@ -1,7 +1,7 @@
 <?php
 
 
-if (!isset($_SESSION['adminid']) && !isset($_SESSION['adminname'])) {
+if (!isset($_SESSION['adminid']) || !isset($_SESSION['adminname'])) {
     header('Location:auth.php?login');
 }
 

@@ -1,6 +1,8 @@
-<?php include('../../includes/connect.php');
-if (!isset($_SESSION['adminid']) && !isset($_SESSION['adminname'])) {
-    header('Location:auth.php?login');
+<?php
+session_start();
+include('../../includes/connect.php');
+if (!isset($_SESSION['adminid']) || !isset($_SESSION['adminname'])) {
+    header('Location:../auth.php?login');
 }
 if (isset($_POST['insert_product'])) {
     $product_title = $_POST['product_title'];
